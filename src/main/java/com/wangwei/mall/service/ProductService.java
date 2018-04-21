@@ -39,7 +39,9 @@ public class ProductService implements IProductService {
     public List<Product> getListWithPage(Integer pageNo,Integer pageSize){
 
         //将参数传给这个方法就可以实现物理分页了，非常简单。
-        PageHelper.startPage(pageNo, pageSize);
+        if(pageNo!=null && pageSize!=null){
+            PageHelper.startPage(pageNo, pageSize);
+        }
 
         return productMapper.getAll();
     }

@@ -6,6 +6,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
+ * 微服务：
+ *  把原先一个大的系统，拆分成一个个小的系统
+ *  每个小系统分别开发、测试、维护。
+ *
+ *
+ *  客户端调用方式：
+ *     服务端提供什么形式的服务：rest服务(http)、webService、rpc
+ *     对应的调用方式；rest--RestTemplate,httpclient.nutz
+ *                   webService--CXF
+ *                   rpc--专用的客户端调用方式
  */
 @SpringBootApplication
 @MapperScan({"com.wangwei.mall.mapper"})

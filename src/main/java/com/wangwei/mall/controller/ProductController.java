@@ -19,6 +19,11 @@ public class ProductController {
     @Resource
     private IProductService productService;
 
+    @RequestMapping(value = "/index")
+    public String index(){
+        return "index";
+    }
+
     @RequestMapping(value = "/getPage")
     @ResponseBody
     public PageInfo getPage(){
@@ -31,5 +36,25 @@ public class ProductController {
         System.out.println(pageInfo.getTotal());//总记录数
 
         return pageInfo;
+    }
+
+    @RequestMapping(value = "/getAll")
+    @ResponseBody
+    public List<Product> getAll(){
+        return productService.getListWithPage(null,null);
+    }
+
+    @RequestMapping(value = "/add")
+    @ResponseBody
+    public String addProduct(Product product){
+        int result = productService.add(product);
+        return result > 0 ? "添加商品成功" : "添加失败";
+    }
+
+    @RequestMapping(value = "/delete")
+    @ResponseBody
+    public String detete(Integer id){
+        int result = productService.deleteById(id);
+        return result > 0 ? "删除商品成功" : "删除失败";
     }
 }
