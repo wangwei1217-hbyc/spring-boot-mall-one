@@ -57,4 +57,10 @@ public class ProductController {
         int result = productService.deleteById(id);
         return result > 0 ? "删除商品成功" : "删除失败";
     }
+
+    @RequestMapping(value = "/address")
+    @ResponseBody
+    public String address(){
+        return "192.168.171.130:8080";
+    }
 }

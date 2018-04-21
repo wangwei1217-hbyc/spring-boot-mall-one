@@ -16,6 +16,9 @@ import org.springframework.context.ConfigurableApplicationContext;
  *     对应的调用方式；rest--RestTemplate,httpclient.nutz
  *                   webService--CXF
  *                   rpc--专用的客户端调用方式
+ *
+ *  常见的注册中心：zookeeper、consul、etcd 、redis
+ *  服务的提供方需要在服务启动的时候，将服务的信息(ip、port)注册到注册中心(zookeeper)
  */
 @SpringBootApplication
 @MapperScan({"com.wangwei.mall.mapper"})
