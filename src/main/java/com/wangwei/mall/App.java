@@ -19,6 +19,10 @@ import org.springframework.context.ConfigurableApplicationContext;
  *
  *  常见的注册中心：zookeeper、consul、etcd 、redis
  *  服务的提供方需要在服务启动的时候，将服务的信息(ip、port)注册到注册中心(zookeeper)
+ *
+ *  专业打包方式：appassembler-maven-plugin 插件
+ *  官网：http://www.mojohaus.org/appassembler/appassembler-maven-plugin/index.html
+ *  打包命令：mvn -D maven.test.skip=true clean package appassembler:assemble
  */
 @SpringBootApplication
 @MapperScan({"com.wangwei.mall.mapper"})
